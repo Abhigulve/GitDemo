@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+	<class name="com.psl.bean.Stock" table="stock_tbl">
+		<id name="product_Name">
+			<generator class="assigned"></generator>
+		</id>
+
+		<property name="stock_Id"></property>
+		<property name="location"></property>
+		<property name="manager_Name"></property>
+		<property name="quantity"></property>
+	</class>
+
+
+
+</hibernate-mapping>

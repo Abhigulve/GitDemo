@@ -1,0 +1,179 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Track driver</title>
+</head>
+<body>
+	<div id="googleMap"
+		style="height: 500px; width: 600px; border: 1px solid"></div>
+	<script type="text/javascript" src=""></script>
+	<script>
+		window.onload = function start() {
+			slide();
+		}
+		function slide() {
+			
+			window.setInterval(
+							function() {
+								var xmlhttp = new XMLHttpRequest();
+								var url = "http://localhost:8080/SampleWebApp/resource/person/getGeolocation";
+
+								xmlhttp.onreadystatechange = function() {
+									if (xmlhttp.readyState == 4
+											&& xmlhttp.status == 200) {
+										myFunction(xmlhttp.responseText);
+									}
+								}
+								response = xmlhttp.open("GET", url, true);
+								xmlhttp.send();
+
+								function myFunction(response) {
+									alert("response  " + response)
+									var obj = JSON.parse(response);
+									latitude = obj.latitude;
+									longitude = obj.longitude;
+
+									/* alert(latitude);
+									alert(longitude); */
+
+									var myCenter = new google.maps.LatLng(
+											latitude, longitude);
+									function initialize() {
+										var mapProp = {
+											center : myCenter,
+											zoom : 5,
+											mapTypeId : google.maps.MapTypeId.ROADMAP
+										};
+										var map = new google.maps.Map(document
+												.getElementById("googleMap"),
+												mapProp);
+										var marker = new google.maps.Marker({
+											position : myCenter,
+										});
+										marker.setMap(map);
+									}
+									google.maps.event.addDomListener(window,
+											'load', initialize);
+
+								}
+							}, 3000); // repeat forever, polling every 3 seconds
+		}
+	</script>
+
+	<script src="http://maps.googleapis.com/maps/api/js">
+		
+	</script>
+
+	<script>
+		/* document.write(latitude+" ,");
+		 document.write(longitude);
+		 */
+	</script>
+</head>
+
+<body>
+	<div id="googleMap" style="width: 500px; height: 380px;"></div>
+</head>
+
+<body>
+	<div id="googleMap" style="width: 500px; height: 380px;"></div>
+
+
+</body>
+
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+
+<script>
+var myCenter=new google.maps.LatLng(18.5886256, 73.7380861);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:5,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+window.onload = function start() {
+	slide();
+}
+function slide() {
+	
+	window.setInterval(
+					function() {
+						var xmlhttp = new XMLHttpRequest();
+						var url = "http://localhost:8080/SampleWebApp/resource/person/getGeolocation";
+
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState == 4
+									&& xmlhttp.status == 200) {
+								myFunction(xmlhttp.responseText);
+							}
+						}
+						response = xmlhttp.open("GET", url, true);
+						xmlhttp.send();
+
+						function myFunction(response) {
+							alert("response  " + response)
+							var obj = JSON.parse(response);
+							latitude = obj.latitude;
+							longitude = obj.longitude;
+
+						
+							var myCenter = new google.maps.LatLng(
+									latitude, longitude);
+							function initialize() {
+								var mapProp = {
+									center : myCenter,
+									zoom : 5,
+									mapTypeId : google.maps.MapTypeId.ROADMAP
+								};
+								var map = new google.maps.Map(document
+										.getElementById("googleMap"),
+										mapProp);
+								var marker = new google.maps.Marker({
+									position : myCenter,
+								});
+								marker.setMap(map);
+							}
+							google.maps.event.addDomListener(window,
+									'load', initialize);
+
+						}
+					}, 3000); // repeat forever, polling every 3 seconds
+}
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+<div id="googleMap" style="width:500px;height:380px;"></div>
+</body>
+</html>

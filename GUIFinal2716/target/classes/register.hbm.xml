@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+	
+
+	<class name="com.psl.bean.SignUp" table="signup_tbl">
+		<id name="username">
+			<generator class="assigned"></generator>
+		</id>
+
+		<property name="first_Name"></property>
+		<property name="last_Name"></property>
+		<property name="email_Id"></property>
+		<property name="password" type="string"></property>
+		<property name="role"></property>
+		<property name="shopname"></property>
+		<property name="shoplocation"></property>
+		<property name="shopaddress"></property>
+		<property name="shopcontact"></property>
+	</class>
+
+</hibernate-mapping>
+
+

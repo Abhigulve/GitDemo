@@ -1,0 +1,569 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<%@ page import="java.sql.*"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+<!-- Theme Made By www.w3schools.com - No Copyright -->
+<title>Bootstrap Theme Company Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link href="http://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato"
+	rel="stylesheet" type="text/css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+body {
+	font: 400 15px Lato, sans-serif;
+	line-height: 1.8;
+	color: #818181;
+}
+
+h2 {
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #303030;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+h4 {
+	font-size: 19px;
+	line-height: 1.375em;
+	color: #303030;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+
+.jumbotron {
+	background-color: #f4511e;
+	color: #fff;
+	padding: 100px 25px;
+	font-family: Montserrat, sans-serif;
+}
+
+.container-fluid {
+	padding: 60px 50px;
+}
+
+.bg-grey {
+	background-color: #f6f6f6;
+}
+
+.logo-small {
+	color: #f4511e;
+	font-size: 50px;
+}
+
+.logo {
+	color: #f4511e;
+	font-size: 400px;
+}
+
+.thumbnail {
+	padding: 0 0 15px 0;
+	border: none;
+	border-radius: 0;
+}
+
+.thumbnail img {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 10px;
+}
+
+.carousel-control.right, .carousel-control.left {
+	background-image: none;
+	color: #f4511e;
+}
+
+.carousel-indicators li {
+	border-color: #f4511e;
+}
+
+.carousel-indicators li.active {
+	background-color: #f4511e;
+}
+
+.item h4 {
+	font-size: 19px;
+	line-height: 1.375em;
+	font-weight: 400;
+	font-style: italic;
+	margin: 70px 0;
+}
+
+.item span {
+	font-style: normal;
+}
+
+.panel {
+	border: 1px solid #f4511e;
+	border-radius: 0 !important;
+	transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+	box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+}
+
+.panel-footer .btn:hover {
+	border: 1px solid #f4511e;
+	background-color: #fff !important;
+	color: #f4511e;
+}
+
+.panel-heading {
+	color: #fff !important;
+	background-color: #f4511e !important;
+	padding: 25px;
+	border-bottom: 1px solid transparent;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+	background-color: white !important;
+}
+
+.panel-footer h3 {
+	font-size: 32px;
+}
+
+.panel-footer h4 {
+	color: #aaa;
+	font-size: 14px;
+}
+
+.panel-footer .btn {
+	margin: 15px 0;
+	background-color: #f4511e;
+	color: #fff;
+}
+
+.navbar {
+	margin-bottom: 0;
+	background-color: #f4511e;
+	z-index: 9999;
+	border: 0;
+	font-size: 12px !important;
+	line-height: 1.42857143 !important;
+	letter-spacing: 4px;
+	border-radius: 0;
+	font-family: Montserrat, sans-serif;
+}
+
+.navbar li a, .navbar .navbar-brand {
+	color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+	color: #f4511e !important;
+	background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+	color: #fff !important;
+}
+
+footer .glyphicon {
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #f4511e;
+}
+
+.slideanim {
+	visibility: hidden;
+}
+
+.slide {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+}
+
+@
+keyframes slide { 0% {
+	opacity: 0;
+	-webkit-transform: translateY(70%);
+}
+
+100%
+{
+opacity
+
+
+
+
+
+
+:
+
+
+
+ 
+
+
+
+1;
+-webkit-transform
+
+
+
+
+
+
+:
+
+
+
+ 
+
+
+
+translateY
+
+
+
+
+
+
+(0%);
+}
+}
+@
+-webkit-keyframes slide { 0% {
+	opacity: 0;
+	-webkit-transform: translateY(70%);
+}
+
+100%
+{
+opacity
+
+
+
+
+
+
+:
+
+
+
+ 
+
+
+
+1;
+-webkit-transform
+
+
+
+
+
+
+:
+
+
+
+ 
+
+
+
+translateY
+
+
+
+
+
+
+(0%);
+}
+}
+@media screen and (max-width: 768px) {
+	.col-sm-4 {
+		text-align: center;
+		margin: 25px 0;
+	}
+	.btn-lg {
+		width: 100%;
+		margin-bottom: 35px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.logo {
+		font-size: 150px;
+	}
+}
+</style>
+
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/order.css">
+
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar"
+	data-offset="60">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-header" href="#"> <img alt="Shroo"
+				src="logo_1931553_web.jpg">
+			</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+
+
+				<li><a href="index.html" onclick="logout()" id="logout">LOGOUT</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+
+
+
+
+	<div class="jumbotron text-center">
+		<h1>Conveyor.com</h1>
+		<p>Reliable Goods Carrier System</p>
+
+	</div>
+
+	<button id="makeOrder" class="button">MakeMyOrder</button>
+	<br>
+	<br>
+	<br>
+
+	<button id="checkOrderbutton" class="button">CheckMyOrder</button>
+
+	<br>
+	<br>
+	<br>
+
+	<button id="trackOrder" class="button" onclick="window.location.href='RouteAtEndUser.html'">TrackMyOrder</button>
+
+
+
+	<div class="container" id="checkorderform" style="display: none">
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="table-responsive">
+					<table id="mytable" class="table table-bordred table-striped">
+
+						<thead>
+							<tr>
+								<th colspan="6"><h4 align="center">Orders Details</h4></th>
+							</tr>
+							<th>Order Id</th>
+							<th>Purchaser Name</th>
+							<th>Product Name</th>
+							<th>Quantity</th>
+<!-- 							<th>Total Amount</th> -->
+							<th>Status</th>
+						</thead>
+
+						<tbody>
+
+							<%
+								Class.forName("com.mysql.jdbc.Driver");
+								String url = "jdbc:mysql://localhost:3306/logistics";
+								String username = "root";
+								String password = "root";
+								String query = "select * from purchaserorder_tbl";
+								Connection conn = DriverManager.getConnection(url, username,
+										password);
+								Statement stmt = conn.createStatement();
+								ResultSet rs = stmt.executeQuery(query);
+								while (rs.next()) {
+							%>
+
+							<tr>
+								<td><%=rs.getInt("order_id")%></td>
+								<td><%=rs.getString("user_Name")%></td>
+								<td><%=rs.getString("product_Name")%></td>
+								<td><%=rs.getInt("quantity")%></td>
+								<td><%=rs.getDouble("tot_Amount")%></td>
+								<td><%=rs.getString("status")%></td>
+							</tr>
+
+							<%
+								}
+							%>
+
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div id="mainContent">
+		<div id="big-form" style="display: none">
+			<form>
+				<fieldset>
+
+					<!-- <div class="form-group">
+					<label class=" control-label" for="textinput" id="orderid">OrderId</label>
+					<div class="">
+						<input id="textinput" name="textinput" placeholder=""
+							class="form-control input-md" type="text">
+					</div>
+				</div> -->
+
+
+					<div class="form-group">
+						<label class=" control-label" for="selectbasic" id="productname">Product
+							Name</label>
+						<div class="">
+							<select id="selectbasic" name="selectbasic" class="form-control">
+								<option value="Milk">Milk</option>
+								<option value="Wheat">Wheat</option>
+								<option value="Sugar">Sugar</option>
+								<option value="Notebook">Notebook</option>
+								<option value="Pen">Pen</option>
+								<option value="Shirt">Shirt</option>
+							</select>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class=" control-label" for="selectbasic" id="supplier">Supplier</label>
+						<div class="">
+							<select id="ssup" name="ssup" class="form-control">
+								<option value="Milk">Chitale</option>
+								<option value="Wheat">Amul</option>
+								
+							</select>
+						</div>
+					</div>
+
+
+
+
+					<div class="form-group">
+						<label class=" control-label" for="textinput" id="quanity">Quantity</label>
+						<div class="">
+							<input id="textinput" name="textinput" placeholder=""
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+
+
+<!-- 
+					<div class="form-group">
+						<label class=" control-label" for="textinput" id="totalamount">Total
+							Amount</label>
+						<div class="">
+							<input id="textinput" name="textinput" placeholder=""
+								class="form-control input-md" type="text">
+						</div>
+					</div> -->
+
+
+					<div class="form-group">
+
+						<div class="">
+							<button id="submitbutton" name="submitbutton"
+								class="btn btn-primary">Submit</button>
+
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+	
+	$(function() {
+		$("#makeOrder").click(function() {
+			 $("#checkorderform").hide(); 
+			 $("#big-form").show(); 
+			 
+		});
+	});
+	
+	
+	
+	$(function() {
+		$("#submitbutton").click(function() {
+			
+			alert('order has been successfully placed.');
+			$("#big-form").hide();
+			 $("#checkorderform").hide(); 
+			
+		});
+	});
+	
+	
+	
+	
+	$(function() {
+		$("#checkOrderbutton").click(function() {
+			
+			 $("#checkorderform").show(); 
+			 $("#big-form").hide(); 
+		});
+	});
+	
+	
+	
+	
+	</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

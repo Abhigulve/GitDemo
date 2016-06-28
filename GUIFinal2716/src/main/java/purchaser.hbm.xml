@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+	<class name="com.psl.bean.Purchaser" table="purchaser_tbl">
+		<id name="purchaser_Id">
+			<generator class="assigned"></generator>
+		</id>
+
+		<property name="purchaser_Name"></property>
+		<property name="shop_Name"></property>
+		<property name="shop_Location"></property>
+		<property name="contact_No"></property>
+		<property name="address"></property>
+	</class>
+
+
+
+</hibernate-mapping>

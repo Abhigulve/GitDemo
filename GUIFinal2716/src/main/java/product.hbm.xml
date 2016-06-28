@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+	<class name="com.psl.bean.Product" table="product_tbl">
+		<id name="product_Id">
+			<generator class="increment"></generator>
+		</id>
+
+		<property name="product_Name"></property>
+		<property name="quantity" type="int"></property>
+		<property name="user_Name"></property>
+		<property name="mfg_Date" type="date"></property>
+		<property name="expiry_Date" type="date"></property>
+		<property name="price" type="double"></property>
+	</class>
+
+
+
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+	<class name="com.psl.bean.PurchaserOrder" table="purchaserOrder_tbl">
+		<id name="order_Id">
+			<generator class="increment"></generator>
+		</id>
+
+		<property name="user_Name"></property>
+		<property name="product_Name"></property>
+		<property name="quantity" type="int"></property>
+		<property name="tot_Amount" type="double"></property>
+		<property name="status"></property>
+	</class>
+
+
+
+</hibernate-mapping>
